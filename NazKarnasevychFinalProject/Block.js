@@ -10,12 +10,24 @@ function Block(x, y, img) {
     image(this.img, this.xVal, this.yVal);
 
   };
-  
-  this.move = function(xval) {
-    this.xVal +=this.speed;
+
+  this.move = function(direction) {
+    if (direction == 1) {
+      this.xVal += this.speed;
+    } 
+    else {
+      this.xVal -= this.speed;
+    }
   }
-  
-  this.stop = function(){
+
+  this.stop = function() {
+
     this.speed = 0;
+
+  }
+
+  this.newCoord = function(newX, newY) {
+    this.xVal = newX;
+    this.yVal = newY;
   }
 }
